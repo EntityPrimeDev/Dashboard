@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Star.xyz</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            background-color: #1c1c1c;
+            color: white;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .header {
+            background-color: #4400ff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-left: 75%;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #503d83;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #d400ff;
+        }
+
+        .user-icon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            margin-right: 5%;
+        }
+
+        .user-icon img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .Title {
+            display: flex;
+            font-size: 40px;
+            text-align: center;
+            margin-left: 42%;
+            border: none;
+            border-radius: 5px;
+            color: rgba(76, 0, 255, 0.856);
+        }
+
+        .description {
+            text-align: center;
+            font-size: 18px;
+            color: #888888;
+            margin: 20px;
+            max-width: 600px;
+            margin-left: 30%;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px;
+            justify-content: center;
+            margin-top: 5%;
+        }
+
+        .product {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+
+        .product:hover {
+            transform: scale(1.01);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 16px;
+        }
+        .CouldNotLoad {
+            width: 150px;
+            height: 0px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Particles container -->
+    <div id="particles-js"></div>
+    <div class="header">
+        <div class="buttons">
+            <a href="/home" class="button">Home</a>
+            <a href="/support" class="button">Support</a>
+            <a href="/construction" class="button">Pannel</a>
+        </div>
+
+    </div>
+
+    <h1 class="Title">Star.xyz Store</h1>
+
+    <div class="product-container">
+        <div class="product" onclick="location.href='https://starxyz.sellpass.io/products/Fortnite-Slotted'">
+            <img src="Images/slotted.png" alt="Product 1">
+            <div class="product-title">Star.xyz Slotted | Fortnite Skill Enhancer</div>
+            <div class="product-price"><b>From: €14.99</b></div>
+        </div>
+        <div class="product" onclick="location.href='https://starxyz.sellpass.io/products/Fortnite-Public-External-'">
+            <img src="Images/external.png" alt="Product 1">
+            <div class="product-title">Star.xyz External Public | Fortnite Skill Booster</div>
+            <div class="product-price"><b>From: €3.00</b></div>
+        </div>
+        <div class="product" onclick="location.href='https://starxyz.sellpass.io/products/Fortnite-Public-External-'">
+            <img src="Images/internal.png" alt="Product 1">
+            <div class="product-title">Star.xyz Public Internal | Fortnite Rage</div>
+            <div class="product-price"><b>From: €5.00</b></div>
+        </div>
+        <div class="product" onclick="location.href='https://starxyz.sellpass.io/products/Temporary-Spoofer'">
+            <img src="Images" class="CouldNotLoad" alt="Could Not Load">
+            <div class="product-title">Star.xyz Game Unban Tool (Temp)</div>
+            <div class="product-price"><b>From: €4.99</b></div>
+        </div>
+        <div class="product" onclick="location.href='https://starxyz.sellpass.io/products/Permanent-Spoofer'">
+            <img src="Images" class="CouldNotLoad" alt="Could Not Load">
+            <div class="product-title">Star.xyz Game Unban Tool (Perm)</div>
+            <div class="product-price"><b>From: €19.99</b></div>
+        </div>
+        <div class="product" onclick="location.href='https://starxyz.sellpass.io/products/Rust-Public'">
+            <img src="Images/rust.png" class="CouldNotLoad" alt="Could Not Load">
+            <div class="product-title">Star.xyz Rust Public</div>
+            <div class="product-price"><b>From: €8.00</b></div>
+        </div>
+    </div>
+
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 50, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 }, image: { src: "img/github.svg", width: 100, height: 100 } },
+                opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                line_linked: { enable: true, distance: 150, color: "#4400ff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 0.2 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #121212;
+    }
+
+    .login-container {
+      background-color: #282c35;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      width: 300px;
+      position: relative;
+      animation: shineAnimation 5s infinite;
+      z-index: 1;
+    }
+
+    @keyframes shineAnimation {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(3deg);
+      }
+    }
+
+    .login-header {
+      background-color: #4400ff;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .login-header i {
+      font-size: 36px;
+      color: #f39c12;
+    }
+
+    .login-body {
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      color: #333;
+      background-color: #f2f2f2;
+    }
+
+    .btn {
+      background-color: #4400ff;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #d400ff;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 15px;
+      color: #3498db;
+    }
+
+    .forgot-password a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .switch-panel {
+      text-align: center;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    .switch-panel a {
+      color: #3498db;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .switch-panel a:hover {
+      text-decoration: underline;
+    }
+
+    .forgot-panel {
+      display: none;
+    }
+    .Invalid {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="login-container">
+    <div class="login-header">
+      <i class="fas fa-play"></i>
+      <h2 id="form-title">Login</h2>
+    </div>
+    <div class="login-body" id="login-panel">
+      <!-- Existing login form -->
+      <form action="/login" method="POST">
+        <p id="Invalid" class="Invalid"></p>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password">
+        </div>
+        <button class="btn" type="submit">Login</button>
+      </form>
+
+      <div class="forgot-password">
+        <a onclick="switchForm('forgot')">Forgot Password?</a>
+      </div>
+      <div class="switch-panel">
+        <p>Don't have an account? <a onclick="switchForm('register')">Register</a></p>
+      </div>
+    </div>
+
+    <div class="login-body forgot-panel" id="forgot-panel">
+      <form action="/forgot-password" method="POST">
+        <div class="form-group">
+          <label for="forgot-email">Email</label>
+          <input type="email" id="forgot-email" name="email" placeholder="Enter your email">
+        </div>
+        <button class="btn" type="submit" onclick="switchForm('login')">Forgot Password</button>
+      </form>
+
+      <div class="switch-panel">
+        <p>Remember your password? <a onclick="switchForm('login')">Login</a></p>
+      </div>
+    </div>
+
+    <div class="login-body" id="register-panel" style="display: none;">
+      <form action="/register" method="POST">
+        <div class="form-group">
+          <label for="new-email">Email</label>
+          <input type="email" id="new-email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="new-username">New Username</label>
+          <input type="text" id="new-username" name="username" placeholder="Enter your new username">
+        </div>
+        <div class="form-group">
+          <label for="new-password">New Password</label>
+          <input type="password" id="new-password" name="password" placeholder="Enter your new password">
+        </div>
+        <button class="btn" type="submit">Register</button>
+      </form>
+
+      <div class="switch-panel">
+        <p>Already have an account? <a onclick="switchForm('login')">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 50, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 }, image: { src: "img/github.svg", width: 100, height: 100 } },
+                opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                line_linked: { enable: true, distance: 150, color: "#4400ff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 0.2 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            }
+        });
+
+    function switchForm(formType) {
+      if (formType === 'register') {
+        document.getElementById('login-panel').style.display = 'none';
+        document.getElementById('register-panel').style.display = 'block';
+        document.getElementById('form-title').innerText = 'Register';
+      } else if (formType === 'forgot') {
+        document.getElementById('login-panel').style.display = 'none';
+        document.getElementById('forgot-panel').style.display = 'block';
+        document.getElementById('form-title').innerText = 'Forgot Password';
+      } else {
+        document.getElementById('login-panel').style.display = 'block';
+        document.getElementById('forgot-panel').style.display = 'none';
+        document.getElementById('register-panel').style.display = 'none';
+        document.getElementById('form-title').innerText = 'Login';
+      }
+    }
+  </script>
+</body>
+</html>

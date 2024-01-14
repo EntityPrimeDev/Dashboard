@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Under Construction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            background-color: #1c1c1c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .error-container {
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 50px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+
+        .message {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .construction-image {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 50%; 
+    overflow: hidden; 
+}
+    </style>
+    <script>
+        setTimeout(function () {
+            window.location.href = "/";
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">Credidentials Invalid</div>
+        <div class="message"><b>Looks Like Details Are Already In Use... Redirecting You!</b></div>
+    </div>
+</body>
+</html>

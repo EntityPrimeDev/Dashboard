@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Star.xyz</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            background-color: #1c1c1c;
+            color: white;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .header {
+            background-color: #4400ff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-left: 72%;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #503d83;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #d400ff;
+        }
+
+        .user-icon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            margin-right: 3%;
+        }
+
+        .user-icon img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .Title {
+            display: flex;
+            font-size: 40px;
+            text-align: center;
+            margin-left: 42%;
+            border: none;
+            border-radius: 5px;
+            color: rgba(76, 0, 255, 0.856);
+        }
+
+        .article-container {
+            margin: 20px;
+            max-width: 800px;
+            margin-left: 30%;
+        }
+
+        .article {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Particles container -->
+    <div id="particles-js"></div>
+    <div class="header">
+        <div class="buttons">
+            <a href="/home" class="button">Home</a>
+            <a href="/store" class="button">Store</a>
+            <a href="/construction" class="button">Pannel</a>
+        </div>
+
+        <div class="user-icon" id="userIcon">
+            <img src="./icon-user.png" alt="User Icon">
+        </div>
+    </div>
+
+    <h1 class="Title">Star.xyz Support</h1>
+
+
+    <!-- <b>What Settings and programs you need installed to your pc:</b><br>Download Medal,
+                Enable Overlay in medal has to be off,
+                Download Vc all run times,
+                Fortnite Must be Windowed/Fullscreen,
+                Must be on Windows 10 for it to work 100%,
+                Must bypass before opening Fortnite,
+                Must inject in lobby.
+                Anti virus must be off,
+                Must open loader as an administrator,
+                Medal has to be running in the background. -->
+    <div class="article-container">
+        <div class="article">
+            <h2>How to Install Star.xyz Fortnite Slotted</h2>
+            <p>After Purchase, you must have the app called "Medal.tv". After Medal.tv is open load slotted, once open enter key then click bypass to start loading bypass. Once done load up epicgames (fortnite) and load cheat this time once done you should see a menu in game.</p>
+        </div>
+
+        <div class="article">
+            <h2>How to Install Star.xyz Spoofers</h2>
+            <p>After Purchase, you must load the spoofer (temp or perm) and enter your key, after that click the option you want for spoofing, then wait. If you have temp that means you serials will go back to the original ones after a computer restart, if you have perm they will stay with you for life and not go unless you change your mobo or other components.</p>
+        </div>
+
+        <div class="article">
+            <h2>Troubleshooting Common Issues</h2>
+            <p>There are lots of common issues. Here is a list on how to fix them:<br>1. Fortnite Cheat not showing anything even though you loaded bypass. Well the first thing is to restart pc and try bypass and load again, but if that does not work check to see if you Medal.TV overlay is on this is the leading cause of issues.<br>2. Spoofers not spoofing, if this happens to you, you must retry if once again that does not work then check if it supports your motherboard, there are lots of motherboards out there that dont support spoofers so keep a eye out.</p>
+        </div>
+
+    </div>
+
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 50, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 }, image: { src: "img/github.svg", width: 100, height: 100 } },
+                opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                line_linked: { enable: true, distance: 150, color: "#4400ff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 0.2 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            }
+        });
+    </script>
+</body>
+</html>
